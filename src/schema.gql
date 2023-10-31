@@ -1,0 +1,16 @@
+interface Node {
+  id: ID!
+}
+
+type PassengerConnection {
+  totalCount: Int!
+}
+
+type Train implements Node {
+  id: ID!
+  passengers(first: Int): PassengerConnection!
+}
+
+type Query {
+  node(id: String!): Node
+}
